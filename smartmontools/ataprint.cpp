@@ -1195,6 +1195,7 @@ static void PrintSmartAttribWithThres(const ata_smart_values * data,
     attributes[attrname.c_str()].insert(std::make_pair("Failed", (state == ATTRSTATE_FAILED_NOW  ? "Now" :
             state == ATTRSTATE_FAILED_PAST ? "Past"
                                            : "N/A")));
+    attributes[attrname.c_str()].insert(std::make_pair("Raw", rawstr.c_str()));
 
   }
 
