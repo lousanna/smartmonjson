@@ -1,0 +1,13 @@
+{
+	"Disk-Information":{
+		"ATA-Version":"ATA/ATAPI-6 published, ANSI INCITS 361-2002",
+		"Device-Model":"1.0",
+		"Local-Time":"Wed Oct 11 09:12:38 2017 EDT",
+		"Recognized-by-Smartctl":"No",
+		"SMART-Support":"Unavailable",
+		"Sector-Size":"512 bytes logical/physical",
+		"Serial-Number":"VB27bdd7b8-5ac27132",
+		"User-Capacity":"16,106,127,360 bytes [16.1 GB]"
+	}
+}
+
