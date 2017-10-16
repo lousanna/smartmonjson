@@ -55,6 +55,11 @@
 const char * smartctl_cpp_cvsid = "$Id: smartctl.cpp 4406 2017-03-11 15:12:56Z chrfranke $"
   CONFIG_H_CVSID SMARTCTL_H_CVSID;
 
+struct json {
+  std::unordered_map<std::string, smart_field> device_info;
+  std::unordered_map<std::string, smart_field> smart_attributes;
+};
+
 json test;
 
 // Globals to control printing

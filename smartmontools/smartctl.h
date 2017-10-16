@@ -81,10 +81,7 @@ struct smart_field {
   void * data;
 };
 
-struct json {
-  std::unordered_map<std::string, smart_field> device_info;
-  std::unordered_map<std::string, smart_field> smart_attributes;
-};
+extern struct json;
 
 // Globals to set failuretest() policy
 extern bool failuretest_conservative;
