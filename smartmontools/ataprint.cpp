@@ -684,7 +684,7 @@ static void print_drive_info(const ata_identify_device * drive,
       format_with_thousands_sep(num, sizeof(num), sizes.capacity),
       format_capacity(cap, sizeof(cap), sizes.capacity));
 
-    string sector_size;
+    std::string sector_size;
     // Print sector sizes.
     if (sizes.phy_sector_size == sizes.log_sector_size) {
       pout("Sector Size:      %u bytes logical/physical\n", sizes.log_sector_size);
