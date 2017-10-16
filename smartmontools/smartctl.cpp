@@ -55,6 +55,8 @@
 const char * smartctl_cpp_cvsid = "$Id: smartctl.cpp 4406 2017-03-11 15:12:56Z chrfranke $"
   CONFIG_H_CVSID SMARTCTL_H_CVSID;
 
+json test;
+
 // Globals to control printing
 bool printing_is_switchable = false;
 bool printing_is_off = false;
@@ -276,7 +278,7 @@ static const char * parse_options(int argc, char** argv,
   nvme_print_options & nvmeopts, bool & print_type_only)
 {
   // Please update getvalidarglist() if you edit shortopts
-  const char *shortopts = "h?Vq:d:T:b:r:s:o:S:HcAl:iaxvj:P:t:CXF:n:B:f:g:";
+  const char *shortopts = "h?Vq:d:T:b:r:s:o:S:HcAl:iaxv:j:P:t:CXF:n:B:f:g:";
   // Please update getvalidarglist() if you edit longopts
   struct option longopts[] = {
     { "help",            no_argument,       0, 'h' },

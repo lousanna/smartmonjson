@@ -71,6 +71,21 @@ enum failure_type {
   MANDATORY_CMD,
 };
 
+enum smart_type {
+  TYPE_INTEGER,
+  TYPE_CHAR_PTR
+};
+
+struct smart_field {
+  int smart_type;
+  void * data;
+};
+
+struct json {
+  std::unordered_map<std::string, smart_field> device_info;
+  std::unordered_map<std::string, smart_field> smart_attributes;
+};
+
 // Globals to set failuretest() policy
 extern bool failuretest_conservative;
 extern unsigned char failuretest_permissive;
