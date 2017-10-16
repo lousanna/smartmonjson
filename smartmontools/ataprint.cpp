@@ -50,8 +50,8 @@
 const char * ataprint_cpp_cvsid = "$Id: ataprint.cpp 4433 2017-08-08 20:09:48Z chrfranke $"
                                   ATAPRINT_H_CVSID;
 
-static std::map<string, std::string> jsonmap;
-static std::map<string, std::map<std::string,std::string> > attributes;
+static std::map<std::string, std::string> jsonmap;
+static std::map<std::string, std::map<std::string,std::string> > attributes;
 
 
 
