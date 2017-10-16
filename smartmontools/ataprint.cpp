@@ -47,13 +47,11 @@
 #include "utility.h"
 #include "knowndrives.h"
 
-using namespace std;
-
 const char * ataprint_cpp_cvsid = "$Id: ataprint.cpp 4433 2017-08-08 20:09:48Z chrfranke $"
                                   ATAPRINT_H_CVSID;
 
-static map<string, string> jsonmap;
-static map<string, map<string,string> > attributes;
+static std::map<string, std::string> jsonmap;
+static std::map<string, std::map<std::string,std::string> > attributes;
 
 
 
@@ -609,7 +607,7 @@ static const char * get_sata_curspeed(const ata_identify_device * drive)
   return get_sata_speed((word077 >> 1) & 0x7);
 }
 
-static string format(const string& format, ...)
+static std::string format(const std::string& format, ...)
 {
     const size_t initialSize = 64;
     char buffer[initialSize];
@@ -2602,8 +2600,8 @@ static void print_ata_security_status(const char * msg, unsigned short state)
 
 static void print_json(bool end_at_disk)
 {
-  map<string, string>::iterator it;
-  stringstream ss;
+  std::map<std::string, std::string>::iterator it;
+  std::stringstream ss;
   ss << "{\n\t\"Disk-Information\":{\n";
   for ( it = jsonmap.begin(); it != jsonmap.end(); )
   {
@@ -2613,13 +2611,13 @@ static void print_json(bool end_at_disk)
     ss << std::endl;
   }
   if (end_at_disk || (!end_at_disk && attributes.empty()))
-    ss << "\t}\n}" << endl;
+    ss << "\t}\n}" << std::endl;
   else {
     ss << "\t},\n\t\"Attributes\":[\n";
-    map<string,map<string,string> >::iterator att;
+    std::map<std::string,std::map<string,string> >::iterator att;
     for ( att = attributes.begin(); att != attributes.end(); )
     {
-      map<string,string> attinner = att->second;
+      std::map<string,string> attinner = att->second;
       ss << "\t\t{\n";
       for ( it = attinner.begin(); it != attinner.end(); )
       {
@@ -2633,9 +2631,9 @@ static void print_json(bool end_at_disk)
           ss << ",";
       ss << std::endl;
     }
-    ss << "\t]\n}" << flush;
+    ss << "\t]\n}";
   }
-  cout << ss.str() << std::endl;
+  std::cout << ss.str() << std::endl;
 }
 
 static void print_standby_timer(const char * msg, int timer, const ata_identify_device & drive)
