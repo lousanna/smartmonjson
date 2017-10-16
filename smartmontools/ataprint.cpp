@@ -2614,10 +2614,10 @@ static void print_json(bool end_at_disk)
     ss << "\t}\n}" << std::endl;
   else {
     ss << "\t},\n\t\"Attributes\":[\n";
-    std::map<std::string,std::map<string,string> >::iterator att;
+    std::map<std::string,std::map<std::string,std::string> >::iterator att;
     for ( att = attributes.begin(); att != attributes.end(); )
     {
-      std::map<string,string> attinner = att->second;
+      std::map<std::string,std::string> attinner = att->second;
       ss << "\t\t{\n";
       for ( it = attinner.begin(); it != attinner.end(); )
       {
